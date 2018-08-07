@@ -1009,11 +1009,14 @@ body.page {
   margin-right: auto;
   line-height: 1.5em;
   box-sizing: padding-box;
+  /*@media screen and (max-width: @breakpoint2) {
+        margin-left: (@margin*2);
+        margin-right: (@margin*2);
+    }*/
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .pagettl,
-  .maincontent,
-  .notice {
+  .breadcrumb {
     margin-left: 16px;
     margin-right: 16px;
   }
@@ -1650,6 +1653,39 @@ blockquote.citation .author {
 .imggrid .sponsor img {
   max-width: 100%;
 }
+.imggrid.imggrid-checklist {
+  max-width: 100%;
+  padding: 24px;
+  grid-template-columns: 1fr;
+  display: grid;
+  grid-gap: 32px;
+  align-items: start;
+  justify-items: center;
+}
+@media screen and (min-width: 550px) {
+  .imggrid.imggrid-checklist {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 800px) {
+  .imggrid.imggrid-checklist {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.imggrid.imggrid-checklist .item {
+  position: relative;
+}
+.imggrid.imggrid-checklist .item .imgwrapper {
+  border: 1px solid #EDEDED;
+  margin-bottom: 16px;
+}
+.imggrid.imggrid-checklist .item img {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 160px;
+  display: block;
+  width: 100%;
+}
 .sponsors {
   margin-top: 50px;
 }
@@ -2199,6 +2235,9 @@ blockquote.citation .author {
 }
 .activity-footer .footerblock {
   margin-bottom: 24px;
+}
+.footerblock.notice {
+  max-width: 100%;
 }
 .block-important {
   background-color: #fff6e1;
