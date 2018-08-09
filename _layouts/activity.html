@@ -14,14 +14,14 @@
                 <ul class="activities-list">
                     {% for item in site.activities %}
                         {% for dep in page.depends_on %}
-                            {% if item.name == dep %}         
+                            {% if item.name == dep %}
                                 {% include li-activity.html %}
                             {% endif %}
                         {% endfor %}
                     {% endfor %}
                 </ul>
             </div>
-            {% endif %}            
+            {% endif %}
             <div class="footerblock">
                 <h2>Voor wie?</h2>
                 <p>{% if page.audience %}{{ page.audience }}<a href="#" class="tooltip" data-content="Tenzij specifiek anders vermeld, is elke activiteit (ook) geschikt voor volwassenen"><i class="material-icons">info</i></a>{% else %}Geschikt voor kinderen onder begeleiding en volwassenen.{% endif %}</p>
@@ -45,8 +45,8 @@
             <ol class="timeslots">
                 {% for slot in page.timeslots %}
                 <li>
-                        <i class="material-icons">access_time</i> 
-                        {% assign dayname_en = slot.start | date: "%a" %}  
+                        <i class="material-icons">access_time</i>
+                        {% assign dayname_en = slot.start | date: "%a" %}
                         {% for dag in site.data.nl.days_abbr %}
                             {% if dayname_en == dag['en'] %}
                                 {% assign dayname_nl = dag['nl'] %}
@@ -76,6 +76,9 @@
                 {% if item.name == page.organisator and item.layout != 'navpage' %}
                 <p class="person"><a href="{{site.baseurl}}{{item.id}}">{{item.title}}</a></p>
                 {% endif %}
+                {% if item.name == page.organisator2 and item.layout != 'navpage' %}
+                <p class="person"><a href="{{site.baseurl}}{{item.id}}">{{item.title}}</a></p>
+                {% endif %}
             {% endfor %}
         </div>
     </section>
@@ -103,7 +106,7 @@
                 {% endif %}
             </p>
         </div>
-    </section>    
+    </section>
     <div class="tooltip-content"><p>tooltip content</p></div>
 </article>
 {% include footer.html %}
