@@ -2246,18 +2246,25 @@ blockquote.citation .author {
 .block-important h2 {
   margin-top: 0;
 }
-.timeslots {
+.timeslots,
+.contributors {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.timeslots li {
+.timeslots li,
+.contributors li {
   list-style: none;
   padding: 0;
   margin: 0;
   margin-bottom: 16px;
 }
-.timeslots li > .material-icons {
+.timeslots li.person,
+.contributors li.person {
+  margin-bottom: 4px;
+}
+.timeslots li > .material-icons,
+.contributors li > .material-icons {
   font-size: 16px;
   padding-bottom: 3px;
 }
@@ -2285,6 +2292,24 @@ blockquote.citation .author {
 .metalinks .material-icons {
   font-size: 16px;
 }
+/*
+.contributors-list {
+    list-style: none;
+    padding:0;
+    margin:0;
+    li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: @margin*2;
+        border-left:0;
+        padding-left: 0;
+        .material-icons {
+            font-size: @fntsize-1;
+            padding-bottom: 3px;
+        }
+    }
+}*/
 .programma .search {
   padding: 8px;
 }

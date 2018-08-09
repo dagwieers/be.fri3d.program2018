@@ -132,7 +132,7 @@
     }
 }
 
-.timeslots {
+.timeslots, .contributors {
     list-style: none;
     padding:0;
     margin:0;
@@ -144,6 +144,9 @@
         //padding-left: @margin*2;
         //border-left: 2px solid @clr-gray4;
         
+    }
+    li.person {
+        margin-bottom: @margin/2;
     }
     li > .material-icons {
         font-size: @fntsize-1;
@@ -176,3 +179,21 @@
 .metalinks .material-icons {
     font-size: @fntsize-1;
 }
+/*
+.contributors-list {
+    list-style: none;
+    padding:0;
+    margin:0;
+    li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: @margin*2;
+        border-left:0;
+        padding-left: 0;
+        .material-icons {
+            font-size: @fntsize-1;
+            padding-bottom: 3px;
+        }
+    }
+}*/

@@ -13,11 +13,13 @@
                 <h2>Activiteiten</h2>
                 <ul class="activities-list">
                         {% for item in site.activities %}  
-                            {% if item.organisator == page.name %}
-                            {% for slot in item.timeslots %}
-                                {% include li-activity-slot.html %}
+                            {% for contr in item.contributors %}
+                                {% if contr == page.name %}
+                                    {% for slot in item.timeslots %}
+                                        {% include li-activity-slot.html %}
+                                    {% endfor %}
+                                {% endif %} 
                             {% endfor %}
-                            {% endif %}
                         {% endfor %}
                 </ul>
         </div>

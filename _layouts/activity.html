@@ -71,15 +71,16 @@
             {% endfor %}
         </div>
         <div class="sideblock">
-            <h2>Organisator</h2>
+            <h2>Georganiseerd door</h2>
+            <ul class="contributors">
             {% for item in site.contributors %}
-                {% if item.name == page.organisator and item.layout != 'navpage' %}
-                <p class="person"><a href="{{site.baseurl}}{{item.id}}">{{item.title}}</a></p>
-                {% endif %}
-                {% if item.name == page.organisator2 and item.layout != 'navpage' %}
-                <p class="person"><a href="{{site.baseurl}}{{item.id}}">{{item.title}}</a></p>
-                {% endif %}
+                {% for contr in page.contributors %}
+                    {% if item.name == contr and item.layout != 'navpage' %}
+                    <li class="person"><i class="material-icons">account_circle</i> <a href="{{site.baseurl}}{{item.id}}">{{item.title}}</a></li>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
+            </ul>
         </div>
     </section>
     <section class="sidebar2">
